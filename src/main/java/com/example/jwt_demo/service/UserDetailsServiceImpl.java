@@ -20,6 +20,11 @@ public class UserDetailsServiceImpl implements UserDetailsService { // Spring se
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Kullanıcı bulunamadı: " + username));
 
+        String role = user.getRole().startsWith("ROLE_") ?
+                user.getRole().substring(5) :
+                user.getRole();
+
+        // kullanıcı adı, şifre ve roller UserDetails formatına çevrilir.
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getUsername())
                 .password(user.getPassword())
