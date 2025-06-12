@@ -45,7 +45,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
 
-        // Kimlik doğrulama AuthenticationManager ile
+        // Kimlik doğrulama AuthenticationManager ile yaparız
         // new UsernamePasswordAuthenticationToken(...) Kullanıcının girdiği kullanıcı adı ve şifreyi içeren bir token nesnesi oluşturur
         // authenticate(...) Bu token'ı alıp doğrular (bizim UserDetailsServiceImpl ve PasswordEncoder aracılığıyla)
         Authentication authentication = authenticationManager.authenticate(
