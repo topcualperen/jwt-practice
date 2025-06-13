@@ -1,6 +1,6 @@
 
 jwt:
-  secret: ========================SpringBootJWT=========================
+  secret: PT09PT09PT09PT09PT09PT09PT09PT1TcHJpbmdCb290SldUPT09PT09PT09PT09PT09PT09PT09PQ==
   expiration: 86400000  # 24 saat (ms)
 
 spring:
